@@ -10,7 +10,6 @@ const axiosInstance = axios.create({
 //请求拦截器
 axiosInstance.interceptors.request.use(
   (config)=>{
-    console.log(store.getState())
     let token =store.getState().token;
     if(token){
       config.headers.authorization=`Bearer${token}`;

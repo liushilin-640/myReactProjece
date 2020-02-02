@@ -9,3 +9,9 @@ export const logined = (username,password)=>{
     }
   })
 }
+export const qinqiuList = ()=>{
+  return axiosInstance({
+    url:'/category/get',
+    method:'GET'
+  })
+}

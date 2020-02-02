@@ -9,13 +9,12 @@ export default function checkLogin(WrappedComponent){
       'Component'})`;
     render(){
       const {location,use} =this.props;
-      console.log(use)
       if(use.user.token){
         if(location.pathname=='/login'){
          return <Redirect to='/'/>
         }
       }else{
-        if(location.pathname=='/')
+        if(location.pathname!=='/login')
         return <Redirect to='/login' />
       }
       return <WrappedComponent {...this.props} />;

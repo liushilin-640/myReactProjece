@@ -79,7 +79,6 @@ class Headmain extends React.Component{
     const {isFull,date}=this.state;
     const {pathname}=this.props.location;
     let title = this.findTitle(menus,pathname);
-    console.log(title)
     return (
 
       <div className='mhead'>

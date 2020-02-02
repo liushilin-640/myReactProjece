@@ -9,6 +9,7 @@ import BaseLayout from './components/baseLayout';
 import {zh,en} from './locales';
 import zhCN from 'antd/es/locale/zh_CN';
 import enUS from 'antd/es/locale/en_US';
+import routes from './config/routes'
 
 @connect((state)=>({language:state.language}),null)
 class App extends React.Component{
@@ -21,7 +22,9 @@ class App extends React.Component{
           <Switch>
             <Route path='/login' component={Login} />
             <BaseLayout>
-              <Route path='/' component={Home} />
+              {routes.map((item)=>{
+                return <Route exact={item.exact} path={item.path} component={item.component} key={item.path} />
+              })}
             </BaseLayout>
           </Switch> 
         </IntlProvider>
